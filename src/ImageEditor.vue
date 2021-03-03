@@ -1,5 +1,5 @@
 <template>
-  <div ref="tuiImageEditor" style="width: 100%;height: 100%;"></div>
+  <div ref="tuiImageEditor" style="width: 100%; height: 100%"></div>
 </template>
 <script>
 import ImageEditor from 'tui-image-editor';
@@ -67,7 +67,7 @@ export default {
     },
     getMethod(instance, methodName) {
       const {first, rest} = this.parseDotMethodName(methodName);
-      const isInstance = (instance.constructor.name !== 'Object');
+      const isInstance = instance.constructor.name !== 'Object';
       const type = typeof instance[first];
       let obj;
 
@@ -90,7 +90,10 @@ export default {
 
       if (firstDotIdx > -1) {
         firstMethodName = methodName.substring(0, firstDotIdx);
-        restMethodName = methodName.substring(firstDotIdx + 1, methodName.length);
+        restMethodName = methodName.substring(
+          firstDotIdx + 1,
+          methodName.length
+        );
       }
 
       return {
